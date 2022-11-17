@@ -6,7 +6,7 @@ defmodule Mintacoin.Payments.Stellar do
   @behaviour Mintacoin.Payments.Crypto.Spec
 
   alias Mintacoin.Payments.Crypto.PaymentResponse
-  alias Stellar.{Horizon, Horizon.Transaction, Horizon.Transactions, KeyPair, TxBuild}
+  alias Stellar.{Horizon, Horizon.Transaction, KeyPair, TxBuild}
   alias Stellar.TxBuild.Payment
 
   @type account_information :: map()

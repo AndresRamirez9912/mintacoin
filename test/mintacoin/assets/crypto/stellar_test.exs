@@ -36,7 +36,7 @@ defmodule Mintacoin.Assets.StellarTest do
     end
   end
 
-  describe "create_trustline/1" do
+  describe "mock create_trustline/1" do
     test "with an existing blockchain" do
       {:ok,
        %AssetResponse{
@@ -62,6 +62,19 @@ defmodule Mintacoin.Assets.StellarTest do
           asset_code: asset_code,
           asset_supply: asset_supply
         )
+    end
+  end
+
+  describe "create_trustline/1" do
+    test "Test create a trustline with an existing blockchain", %{
+      secret_key: secret_key,
+      asset_code: asset_code
+    } do
+      {:ok,
+       %AssetResponse{
+         tx_id: "fb857cdf3f9dd91c6d7101b98d90286df43e9d383f6f0826b91ae5211a7f34b5",
+         tx_hash: "fb857cdf3f9dd91c6d7101b98d90286df43e9d383f6f0826b91ae5211a7f34b5"
+       }} = Stellar.create_trustline(trustor_secret_key: secret_key, asset_code: asset_code)
     end
   end
 end

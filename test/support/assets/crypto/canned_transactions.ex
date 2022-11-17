@@ -3,10 +3,6 @@ defmodule Horizon.Assets.CannedTransactions do
   Defines horizon assets mocks for transactions
   """
 
-  @type transaction :: Stellar.Horizon.Transaction.t()
-
-  @spec create(any) :: {:ok, transaction()}
-
   def create(_base64_envelope) do
     {:ok,
      %Stellar.Horizon.Transaction{
@@ -40,6 +36,7 @@ defmodule Horizon.Assets.CannedTransactions do
      }}
   end
 
+  @spec fetch_next_sequence_number(any) :: {:ok, 4_060_260_218_175_520}
   def fetch_next_sequence_number(_funder_public_key) do
     {:ok, 4_060_260_218_175_520}
   end
